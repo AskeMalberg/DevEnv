@@ -2,12 +2,16 @@ extends layout
 
 block content
   header
-    h1= title
+    h1(
+      id="home"
+      onclick='returnHome()'
+    )= title
   nav
     ul
-      li Site01
-      li Site02
-      li Site03
-  div(class="container")
+      li(onclick='changeContent(this)') Site01
+      li(onclick='changeContent(this)') Site02
+      li(onclick='changeContent(this)') Site03
+  div(id="container")
     h4 Placeholder
     p Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quos, quis laudantium natus fugiat eveniet blanditiis nemo amet possimus. Eum, libero. Mollitia, explicabo rem dolorum eligendi consectetur voluptate voluptatem consequuntur ipsam quidem dolorem eius itaque aut alias dolores voluptates nisi sed magnam sequi maxime fuga reiciendis enim impedit doloribus? Animi.
+
