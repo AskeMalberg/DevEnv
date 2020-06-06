@@ -1,6 +1,94 @@
-@background-color: orange;
+@bg-color: rgb(41, 115, 145);
+@bg-light: lighten(@bg-color, 10%);
+@bg-dark: darken(@bg-color, 10%);
+@text-bg: rgb(255, 255, 255);
+@border-bg: rgb(0, 0, 0);
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,300&display=swap');
+@main-font: 'Roboto', sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+@sub-font: 'Noto Serif', serif;
 
 body{
-    background-color: @background-color;
+    margin: 0;
+    background-color: @bg-color;
+
+}
+
+header{
+    width: 100%;
+    background-image: svg-gradient(to bottom, @bg-light, @bg-dark);
+    height: 70px;
+    line-height: 70px;
+
+
+    h1{
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        font-family: @main-font;
+        font-weight: light;
+
+    }
+}
+
+
+nav{
+    width: 100%;
+    background-color: @border-bg;
+    height: 25px;
+
+    ul{
+        width: 450px;
+        height: 100%;
+        margin: 0 auto;
+        list-style: none;
+        padding: 0;
+
+
+        li{
+            width: 150px;
+            height: 100%;
+            float: left;
+            line-height: 25px;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+            user-select: none;
+            font-family: @main-font;
+            
+            
+
+            &:hover{
+                background-color: @bg-dark;
+            }
+            &:active{
+                background-color: @bg-light;
+                color: black;
+                
+            }
+        }
+    }
+}
+
+.container{
+    width: 450px;
+    margin: 0 auto;
+    background-color: @text-bg;
+    margin-top: 10px;
+    padding: 10px;
+
+    h4{
+        margin: 0;
+        padding: 0;
+        font-family: @main-font;
+
+    }
+    p{
+        margin: 0;
+        margin-top: 5px;
+        font-family: @sub-font;
+    }
 }
