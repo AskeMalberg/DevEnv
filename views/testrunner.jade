@@ -1,0 +1,43 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/node_modules/mocha/mocha.css')
+    script(src="/javascripts/scripts.js")
+
+  body
+    block content
+    header
+      h1(
+        id="home"
+        onclick='returnHome()'
+      ) Test
+    nav
+      ul
+        li(onclick='changeContent(this)') Site01
+        li(onclick='changeContent(this)') Site02
+        li(onclick='changeContent(this)') Site03
+    div(id="container")
+      h4 Placeholder
+      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quos, quis laudantium natus fugiat eveniet blanditiis nemo amet possimus. Eum, libero. Mollitia, explicabo rem dolorum eligendi consectetur voluptate voluptatem consequuntur ipsam quidem dolorem eius itaque aut alias dolores voluptates nisi sed magnam sequi maxime fuga reiciendis enim impedit doloribus? Animi.
+
+    div(id="mochaContainer")
+      div(id="mocha")
+      script(src="/node_modules/mocha/mocha.js")
+      script(src="/node_modules/chai/chai.js")
+      script.
+        mocha.setup('bdd')
+      
+      //-load code you want to test here
+      script(src="/javascripts/scripts.js")
+
+      //-load your test files here
+      script(src="/javascripts/test/scriptsTest.js")
+
+      script.
+        mocha.run();
+  
+
+    
+
